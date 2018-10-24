@@ -47,17 +47,5 @@ lazy val root = (project in file("."))
     /**
       * Publishing
       */
-    publishTo := {
-      val nexus = "https://oss.sonatype.org/"
-      if (isSnapshot.value)
-        Some("snapshots" at nexus + "content/repositories/snapshots")
-      else
-        Some("releases" at nexus + "service/local/staging/deploy/maven2")
-    },
-    scmInfo := Some(ScmInfo(url("https://github.com/testcontainers/testcontainers-scala"), "git@github.com:testcontainers/testcontainers-scala.git")),
-    developers := List(
-      Developer("dimafeng", "Dmitry Fedosov", "dimafeng@gmail.com", url("https://github.com/dimafeng"))
-    ),
-    description := "Docker containers for testing in scala ",
-    licenses := Seq("The MIT License (MIT)" -> new URL("https://opensource.org/licenses/MIT"))
+    publishTo := Some("Nexus Tomatowin" at "http://repository.tomatowin.local/nexus/content/repositories/snapshots")
   )
